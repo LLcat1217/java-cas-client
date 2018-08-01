@@ -719,4 +719,24 @@ public final class CommonUtils {
         }
     }
 
+    /**
+     * Returns the string as-is, unless it's <code>null</code>;
+     * in this case an empty string is returned.
+     *
+     * @param string a possibly <code>null</code> string
+     * @return a non-<code>null</code> string
+     */
+    public static String nullToEmpty(String string) {
+        return string == null ? "" : string;
+    }
+
+    /**
+     * Adds a trailing slash to the given uri, if it doesn't already have one.
+     *
+     * @param uri a string that may or may not end with a slash
+     * @return the same string, except with a slash suffix (if necessary).
+     */
+    public static String addTrailingSlash(String uri) {
+        return uri.endsWith("/") ? uri : uri + "/";
+    }
 }
